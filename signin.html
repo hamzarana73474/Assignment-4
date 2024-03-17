@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      function form_validation() {
+        var first_name = $("#first_name").val();
+        if (first_name == "") {
+          alert("Enter First Name");
+          return false;
+        } else {
+          var pattren1 = /^[A-Z]+$/;
+          if (pattren1.test(first_name)) {
+          } else {
+            alert("Enter Correct First Name");
+            return false;
+          }
+        }
+        var last_name = $("#last_name").val();
+        if (last_name == "") {
+          alert("Enter Last Name");
+          return false;
+        } else {
+          var pattren2 = /^[A-Z]+$/;
+          if (pattren2.test(last_name)) {
+          } else {
+            alert("Enter Correct Last Name");
+            return false;
+          }
+        }
+        var username = $("#username").val();
+        if (username == "") {
+          alert("Enter Username");
+          return false;
+        }
+        var email = $("#email").val();
+        if (email == "") {
+          alert("Enter Email");
+          return false;
+        } else {
+          var pattren4 = /^[a-zA-Z0-9.%_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{3,10}$/;
+          if (pattren4.test(email)) {
+          } else {
+            alert("Enter Correct Email");
+            return false;
+          }
+        }
+        var password = $("#password").val();
+        if (password == "") {
+          alert("Enter Password");
+          return false;
+        } else {
+          var pattren5 =
+            /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          if (pattren5.test(password)) {
+          } else {
+            alert("Enter Correct Password");
+            return false;
+          }
+        }
+        var confirm_password = $("#confirm_password").val();
+        if (password == confirm_password) {
+        } else {
+          alert("Password Did Not Match");
+          return false;
+        }
+        var phone = $("#phone").val();
+        if (phone == "") {
+          alert("Enter Phone Number");
+          return false;
+        } else {
+          var pattren7 = /^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/;
+          if (pattren7.test(phone)) {
+          } else {
+            alert("Enter Correct Phone Number");
+            return false;
+          }
+        }
+        var age = $("#age").val();
+        if (age == "") {
+          alert("Enter Age");
+          return false;
+        } else {
+          var pattren8 = /^(?:1[01][0-9]|120|1[7-9]|[2-9][0-9])$/;
+          if (pattren8.test(age)) {
+          } else {
+            alert("Enter Correct Age");
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+  </head>
+
+  <body>
+    <section>
+      <div class="design1">
+        <form action="" name="form_signup" method="post">
+          <h2>Sign Up</h2>
+          <div class="input-group">
+            <input type="text" name="first_name" id="first_name" />
+            <label for="">First Name</label>
+          </div>
+          <div class="input-group">
+            <input type="text" name="last_name" id="last_name" />
+            <label for="">Last Name</label>
+          </div>
+          <div class="input-group">
+            <input type="text" name="username" id="username" />
+            <label for="">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="email" name="email" id="email" />
+            <label for="">Email</label>
+          </div>
+          <div class="input-group">
+            <input type="password" name="password" id="password" />
+            <label for="">Password</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              name="confirm-password"
+              id="confirm_password"
+            />
+            <label for="">Confirm Password</label>
+          </div>
+          <div class="input-group">
+            <input type="number" name="phone" id="phone" />
+            <label for="">Phone No</label>
+          </div>
+          <div class="input-group">
+            <input type="number" name="age" id="age" />
+            <label for="">Age</label>
+          </div>
+          <div class="remember">
+            <label
+              ><input type="checkbox" /> I agree to the terms &
+              conditions</label
+            >
+          </div>
+          <button type="submit" onclick="form_validation()">Sign Up</button>
+          <div class="head">
+            <p>
+              Already have an account?
+              <a href="index.html" class="signInBtn-link">Sign In</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

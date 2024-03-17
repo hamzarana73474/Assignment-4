@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function validation() {
+        var username = $("#username").val();
+        if (username == "") {
+          alert("Enter Username");
+          return false;
+        } else {
+          var pattren1 = /^[a-zA-Z0-9.%_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{3,10}$/;
+          if (pattren1.test(username)) {
+          } else {
+            alert("Enter Correct Username");
+            return false;
+          }
+        }
+        var password = $("#password").val();
+        if (password == "") {
+          alert("Enter Password");
+          return false;
+        } else {
+          var pattren5 =
+            /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          if (pattren5.test(password)) {
+          } else {
+            alert("Enter Correct Password");
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="design">
+        <form action="" name="form_signin" method="post">
+          <h2>Login</h2>
+          <div class="input-group">
+            <input type="text" name="username" id="username" />
+            <label for="">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="password" name="password" id="password" />
+            <label for="">Password</label>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox" /> Remember me</label>
+          </div>
+          <button type="submit" onclick="validation()">Login</button>
+          <div class="head">
+            <p>
+              Don't have an account?
+              <a href="signin.html">Sign Up</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
